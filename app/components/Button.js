@@ -151,8 +151,8 @@ const baseStyles = StyleSheet.create({
   },
   [shapes.circle]: {
     borderRadius: '50%',
-    height: 56,
-    width: 56,
+    height: 40,
+    width: 40,
   },
   small: {
     height: ButtonSizes.smallHeight,
