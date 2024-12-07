@@ -31,14 +31,14 @@ const MatchWithTableCard = () => {
   const toggleSwipe = () => {
     Animated.timing(translateAnim, {
       toValue: swiped ? 0 : 1,
-      duration: 500,
+      duration: 300,
       easing: Easing.inOut(Easing.ease),
       useNativeDriver: true,
     }).start();
 
     Animated.timing(translateAnimTable, {
       toValue: swiped ? 0 : 1,
-      duration: 500,
+      duration: 300,
       easing: Easing.inOut(Easing.ease),
       useNativeDriver: true,
     }).start();
@@ -77,7 +77,7 @@ const MatchWithTableCard = () => {
 
         <View style={[baseStyle.col, baseStyle.tableCol]}>
           <View style={baseStyle.tableColorsBg} onLayout={(e) => setTblContainerWidth(e.nativeEvent.layout.width)}>
-            <Animated.View style={[baseStyle.red, { transform: [{ translateX: playerTranslateTable }] }]} />
+            <Animated.View style={[baseStyle.red, { transform: [ { skewX: '-7deg' }, { translateX: playerTranslateTable }] }]} />
             <Animated.View style={[baseStyle.blue, { transform: [{ translateX: Animated.multiply(playerTranslateTable, -1) }] }]} />
           </View>
 
@@ -103,6 +103,7 @@ const MatchWithTableCard = () => {
 };
 
 export default MatchWithTableCard;
+
 const baseStyle = StyleSheet.create({
   container: {
     display: 'flex',
@@ -129,8 +130,12 @@ const baseStyle = StyleSheet.create({
   red: {
     flex: 1,
     backgroundColor: Colors.dangerColor,
-    marginRight: 2,
+    marginRight: 5,
     height: '100%',
+    borderBottomLeftRadius: 15,
+    borderTopLeftRadius: 30,
+    overflow: 'hidden',
+    transform: [{ skewY: '-15deg' }],  // Apply skew to make the left border angled
   },
   blue: {
     flex: 1,
@@ -163,4 +168,3 @@ const baseStyle = StyleSheet.create({
     top: '20%',
   },
 });
-
