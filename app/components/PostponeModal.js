@@ -66,6 +66,6 @@ export default PostponeModal;
 const baseStyles = StyleSheet.create({
   view: {
     display: 'flex',
-    gap: 18
+    gap: 18,
   }
 })

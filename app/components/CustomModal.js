@@ -10,21 +10,21 @@ import Heading from './Heading';
 import { Colors } from '../styles';
 
 const CustomModal = ({
-                       width = 616,
-                       title,
-                       open,
-                       footerBackgrounded,
-                       onOpenChange,
-                       onLeftCancel,
-                       onLeftSuccess,
-                       onRightCancel,
-                       onRightSuccess,
-                       rightSuccessButtonProps = {},
-                       rightCancelButtonProps = {},
-                       leftSuccessButtonProps = {},
-                       leftCancelButtonProps = {},
-                       children
-                     }) => {
+  width = 616,
+  title,
+  open,
+  footerBackgrounded,
+  onOpenChange,
+  onLeftCancel,
+  onLeftSuccess,
+  onRightCancel,
+  onRightSuccess,
+  rightSuccessButtonProps = {},
+  rightCancelButtonProps = {},
+  leftSuccessButtonProps = {},
+  leftCancelButtonProps = {},
+  children
+}) => {
   return (
     <View style={styles.container}>
       <Modal
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     paddingRight: 24,
   },
   modalContentScroll: {
-    maxHeight: '60%',
+    maxHeight: '70%',
     width: '100%',
   },
   modalContent: {
