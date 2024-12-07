@@ -27,9 +27,9 @@ const MatchWithTableCard = () => {
   const toggleSwipe = () => {
     Animated.timing(rotateAnim, {
       toValue: swiped ? 0 : 1,
-      duration: 1000, // Animation duration in milliseconds (1 second)
+      duration: 500,
       easing: Easing.inOut(Easing.ease),
-      useNativeDriver: true, // Improves performance by using the native thread
+      useNativeDriver: true,
     }).start();
     setSwiped(!swiped);
   };
