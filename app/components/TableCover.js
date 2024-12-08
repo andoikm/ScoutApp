@@ -29,7 +29,7 @@ const baseStyle = StyleSheet.create({
 	tableColorsBg: {
 		position: 'absolute',
 		height: '61%',
-		width: '53%',
+		width: '80%',
 		padding: 5,
 		justifyContent: 'center',
 		alignItems: 'center',

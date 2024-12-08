@@ -5,6 +5,7 @@ import { Colors } from "../styles";
 import useAnimatedSwiper from "../hooks/useAnimatedSwiper";
 import AvatarWithName from "./AvatarWithName";
 import TableCover from "./TableCover";
+import BallAnimated from "./BallAnimated";
 
 const competitor = {
   src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnV5wPaYnMS7lH4seBEEa79eeFE5M1CpqAmA&s',
@@ -53,11 +54,8 @@ const MatchWithTableCard = () => {
             leftTranslate={swiperTable.leftTranslate}
             rightTranslate={swiperTable.rightTranslate}
           />
-
           <View style={baseStyle.reverseContainer}>
-            <View>
-              ekfj
-            </View>
+            <BallAnimated />
             <View style={baseStyle.reverseButtonContainer}>
               <Button shape="circle" title="T" onPress={toggleSwipe} />
             </View>
@@ -98,6 +96,7 @@ const baseStyle = StyleSheet.create({
   reverseContainer: {
     alignItems: 'center',
     flex: 1,
+    width: '100%',
     justifyContent: 'flex-start',
   },
   reverseButtonContainer: {
