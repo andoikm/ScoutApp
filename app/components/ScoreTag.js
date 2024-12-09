@@ -1,12 +1,12 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { Colors } from "../styles";
 
 const ScoreTag = ({ children }) => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.trapezoid}>
-				<Text style={styles.scoreText}>{children}</Text>
+				<View style={styles.scoreTextContainer}>{children}</View>
 			</View>
 		</View>
 	);
@@ -22,9 +22,11 @@ const styles = StyleSheet.create({
 		position: "relative",
 	},
 	trapezoid: {
+		paddingTop: 10,
+		paddingBottom: 10,
+		paddingRight: 50,
+		paddingLeft: 50,
 		backgroundColor: Colors.lightBackgroundColor,
-		width: 200,
-		height: 50,
 		justifyContent: "center",
 		alignItems: "center",
 		shadowColor: "#000",
@@ -33,9 +35,11 @@ const styles = StyleSheet.create({
 		shadowRadius: 5,
 		elevation: 6,
 	},
-	scoreText: {
-		color: "#000",
-		fontSize: 16,
-		position: "absolute",
+	scoreTextContainer: {
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+		alignItems: "center",
+		gap: 5,
 	},
 });
