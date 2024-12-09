@@ -5,11 +5,11 @@ const Icons = ({ icon, size, color = Colors.primaryTextColor, ...rest }) => {
 
 	let IconComponent = Ionicons;
 
-	if (['back-in-time', 'chevron-left', 'chevron-right'].indexOf(icon) > -1){
+	if (['back-in-time', 'chevron-left', 'chevron-right', 'email'].indexOf(icon) > -1){
 		IconComponent = Entypo;
 	}
 
-	if (['timer-outline', 'menu-right-outline'].indexOf(icon) > -1){
+	if (['timer-outline', 'menu-right-outline', 'lock-outline'].indexOf(icon) > -1){
 		IconComponent = MaterialCommunityIcons;
 	}
 

@@ -3,6 +3,7 @@ import Heading from '../components/Heading';
 import Button from '../components/Button';
 import Layout from '../components/Layout';
 import { useGlobalState } from '../context/AppProvider';
+import ConfirmButton from "../components/ConfirmButton";
 
 const Logout = () => {
   const { globalState, handleLogOut } = useGlobalState();
@@ -23,14 +24,20 @@ const Logout = () => {
           <Heading size="small" viewStyles={styles.heading}>
             No upcoming matches within the next 30 minutes. {globalState.screenName}
           </Heading>
-          <Button
-            theme="primary"
-            flex={0}
-            styles={{ width: 142 }}
-            onPress={handleLogOut}
+          <ConfirmButton
+            onConfirm={handleLogOut}
+            title="Logout"
+            successButtonProps={{title: "LOG OUT"}}
+            content="Are you sure you want to logout?"
           >
-            LOG OUT
-          </Button>
+            <Button
+              theme="primary"
+              flex={0}
+              styles={{ width: 142 }}
+            >
+              LOG OUT
+            </Button>
+          </ConfirmButton>
         </View>
       </View>
     </Layout>

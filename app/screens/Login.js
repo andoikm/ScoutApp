@@ -25,6 +25,7 @@ const Login = () => {
               <Heading size="small" viewStyles={baseStyles.heading}>Please Login to your account.</Heading>
             </View>
             <EmailInput
+              icon="email"
               label="Email"
               placeholder="Enter your email"
               value={''}
@@ -34,6 +35,7 @@ const Login = () => {
               onDomainChange={() => {}}
             />
             <Input
+              icon="lock-outline"
               label="Password"
               type="password"
               placeholder="Password"

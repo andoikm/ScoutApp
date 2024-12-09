@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, StyleSheet, Platform } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { Colors, defaultFont } from '../styles';
+import Icons from "./Icons";
 
 const EmailInput = ({
   label,
@@ -19,7 +20,7 @@ const EmailInput = ({
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
       <View style={styles.inputContainer}>
-        {icon && <View style={styles.icon}>{icon}</View>}
+        {icon && <Icons icon={icon} style={styles.icon} />}
         <TextInput
           value={value}
           style={styles.input}
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginRight: 6,
-    height: 16,
+    fontSize: 16,
     color: Colors.primaryColor,
   },
   input: {
