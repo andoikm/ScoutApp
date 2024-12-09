@@ -1,12 +1,12 @@
 import {useRef, useState} from "react";
-import { Animated } from "react-native";
+import {Animated, Easing} from "react-native";
 import useAnimateParabola from "./useAnimateParabola";
 import useAnimateTopToBottom from "./useAnimateTopToBottom";
 
 const useBallAnimation = (containerSize) => {
 	const [lastClicked, setLastClicked] = useState(null);
 	const translateX = useRef(new Animated.Value(0)).current;
-	const translateY = useRef(new Animated.Value(0)).current;
+	const translateY = useRef(new Animated.Value(-30)).current;
 	const getAnimateParabola = useAnimateParabola(translateX, translateY, 500);
 
 	const getAnimateTopToBottom = useAnimateTopToBottom(translateY);
@@ -18,6 +18,14 @@ const useBallAnimation = (containerSize) => {
 
 		const x = translateX["_value"];
 		if (x === 0) {
+			if(!lastClicked) {
+				animates.push(Animated.timing(translateY, {
+					toValue: 0,
+					duration: 200,
+					easing: Easing.linear,
+					useNativeDriver: true,
+				}));
+			}
 			animates.push(getAnimateParabola(toValueX, bottom, false));
 		} else {
 			animates.push(getAnimateParabola(0, 0, true));

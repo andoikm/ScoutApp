@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
 
 	scoreTableSection: {
 		marginBottom: 30,
+		alignItems: "center",
 	},
 
 	footer: {

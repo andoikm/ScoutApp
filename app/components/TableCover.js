@@ -5,7 +5,7 @@ import {Colors} from "../styles";
 
 const TableCover = ({ swiped, setWidth, leftTranslate, rightTranslate }) => {
 	return (
-		<View style={baseStyle.tableColorsBg} onLayout={e => setWidth(e.nativeEvent.layout.width / 2 - 5)}>
+		<View style={baseStyle.tableColorsBg} onLayout={e => setWidth(e.nativeEvent.layout.width / 2 - 2.5)}>
 			<Animated.View
 				style={[
 					baseStyle.red,

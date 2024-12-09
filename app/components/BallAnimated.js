@@ -39,7 +39,7 @@ const baseStyles = StyleSheet.create({
 		position: "absolute",
 		display: "flex",
 		flexDirection: "row",
-		gap: 10,
+		gap: 20,
 		bottom: "100%",
 	},
 	ball: {
