@@ -1,10 +1,10 @@
 import { StyleSheet, View } from 'react-native';
 import { Colors } from '../styles';
 
-const Layout = ({ backgrounded, children }) => {
+const Layout = ({ backgrounded, contentStyles={}, children }) => {
   return (
-    <View style={baseStyles.container}>
-      <View style={baseStyles.content}>
+    <View style={[baseStyles.container]}>
+      <View style={[baseStyles.content, contentStyles]}>
         {children}
       </View>
       {backgrounded && <View style={baseStyles.bottomHalf} />}

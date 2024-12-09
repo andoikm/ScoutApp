@@ -6,6 +6,7 @@ import Components from '../screens/Components';
 import Logout from '../screens/Logout';
 import UpcomingMatch from '../screens/UpcomingMatch';
 import Match from '../screens/Match';
+import LiveMatch from "../screens/LiveMatch";
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +31,11 @@ const AppNavigator = () => {
       name: 'Match',
       component: Match,
       options: { title: 'Match Page'},
+    },
+    {
+      name: 'LiveMatch',
+      component: LiveMatch,
+      options: { title: 'Live Match Page'},
     },
     {
       name: 'Login',

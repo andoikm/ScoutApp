@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import Button from '../components/Button';
 import { View } from 'react-native';
 import PostponeModal from '../components/PostponeModal';
+import LiveMatch from "./LiveMatch";
 
 const Home = ({ navigation  }) => {
   return (
@@ -33,6 +34,10 @@ const Home = ({ navigation  }) => {
           theme="dangerFilled"
           onPress={() => navigation.navigate('Match')}
         >Match</Button>
+        <Button
+          theme="primaryFilled"
+          onPress={() => navigation.navigate('LiveMatch')}
+        >Live Match</Button>
 
         <PostponeModal />
       </View>

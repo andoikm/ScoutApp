@@ -10,6 +10,7 @@ export const themes = {
   primary: 'primary',
   primaryOutline: 'primaryOutline',
   dangerOutline: 'dangerOutline',
+  dangerOutlineText: 'dangerOutlineText',
   primaryFilled: 'primaryFilled',
   dangerFilled: 'dangerFilled',
 };
