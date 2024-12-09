@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import Button from '../components/Button';
 import Heading from '../components/Heading';
 import MatchWithTableCard from '../components/MatchWithTableCard';
+import ConfirmButton from "../components/ConfirmButton";
 
 const title = "Rocket Masters";
 const description = "Venue Name";
@@ -20,7 +21,16 @@ const Match = ({ navigation }) => {
           <MatchWithTableCard />
         </View>
         <View style={[baseStyles.row, baseStyles.footer]}>
-          <Button theme="dangerOutline" title="STOP STREAMING" onPress={() => {}} styles={baseStyles.buttons} />
+          <ConfirmButton
+            contentBold
+            contentCentred
+            content="Are you sure you want to stop the streaming?"
+            onConfirm={() => alert("confirmed")}
+            cancelButtonProps={{title: "NO"}}
+            successButtonProps={{title: "YES", theme: "danger"}}
+          >
+            <Button theme="dangerOutline" title="STOP STREAMING" styles={baseStyles.buttons} />
+          </ConfirmButton>
           <Button theme="primary" title="START WARMUP" onPress={() => {}} styles={baseStyles.buttons} />
         </View>
       </View>

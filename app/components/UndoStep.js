@@ -7,6 +7,7 @@ const UndoStep = () => {
 			onConfirm={() => alert('UNDO')}
 			title="Undo the last action"
 			content="Buy clicking Undo you last action will be removed and you can set new points"
+			successButtonProps={{title: 'UNDO'}}
 		>
 			<Button size="large" icon="back-in-time" title="UNDO" vertical />
 		</ConfirmButton>

@@ -60,7 +60,7 @@ const CustomModal = ({
                     <Button
                       size="small"
                       flex={0.5}
-                      title="Cancel"
+                      title="CANCEL"
                       onPress={onLeftCancel}
                       {...leftCancelButtonProps}
                     />
@@ -69,7 +69,7 @@ const CustomModal = ({
                     <Button
                       size="small"
                       flex={0.5}
-                      title="Confirm"
+                      title="CONFIRM"
                       onPress={onLeftSuccess}
                       {...leftSuccessButtonProps}
                     />
@@ -82,7 +82,7 @@ const CustomModal = ({
                     <Button
                       flex={1}
                       size="small"
-                      title="Cancel"
+                      title="CANCEL"
                       onPress={onRightCancel}
                       {...rightCancelButtonProps}
                     />
@@ -92,7 +92,7 @@ const CustomModal = ({
                       flex={1}
                       size="small"
                       theme="primary"
-                      title="Confirm"
+                      title="CONFIRM"
                       onPress={onRightSuccess}
                       {...rightSuccessButtonProps}
                     />
