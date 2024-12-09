@@ -1,6 +1,7 @@
 import {View, StyleSheet} from "react-native";
 import UndoStep from "./UndoStep";
 import CompetitorPointer from "./CompetitorPointer";
+import Heading from "./Heading";
 
 const MatchSides = () => (
 	<View style={baseStyles.view}>
@@ -8,6 +9,7 @@ const MatchSides = () => (
 			<CompetitorPointer theme="danger" />
 		</View>
 		<View style={[baseStyles.col, baseStyles.middleCol]}>
+			<Heading theme="secondary" >3TH SET</Heading>
 			<UndoStep />
 		</View>
 		<View style={[baseStyles.col, baseStyles.competitorCol]}>
@@ -30,6 +32,7 @@ const baseStyles = StyleSheet.create({
 		flex: 1
 	},
 	middleCol: {
-		padding: 16
+		padding: 16,
+		gap: 30
 	}
 })
