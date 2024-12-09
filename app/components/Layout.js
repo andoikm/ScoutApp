@@ -19,11 +19,16 @@ const baseStyles = StyleSheet.create({
     flex: 1,
     position: 'relative',
     backgroundColor: Colors.lightTextColor,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   content: {
     flex: 1,
     padding: 20,
     zIndex: 1,
+    maxWidth: 1024,
+    maxHeight: 750,
+    width: '100%',
   },
   bottomHalf: {
     position: 'absolute',

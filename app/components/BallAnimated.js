@@ -5,7 +5,7 @@ import useBallAnimation from "../hooks/useBallAnimation";
 
 const BallAnimated = () => {
 	const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
-	const { translateX, translateY, rightAnimate, leftAnimate } = useBallAnimation(containerSize);
+	const { translateX, translateY, rightAnimate, leftAnimate, lastClicked } = useBallAnimation(containerSize);
 
 	return (
 		<View
@@ -17,8 +17,8 @@ const BallAnimated = () => {
 		>
 			<Animated.View style={[baseStyles.ball, { transform: [{ translateX }, { translateY }] }]} />
 			<View style={baseStyles.controls}>
-				<Button shape="circle" onPress={leftAnimate} title="L" />
-				<Button shape="circle" onPress={rightAnimate} title="R" />
+				<Button shape="circle" onPress={leftAnimate} title="L" disabled={lastClicked === 'left'} />
+				<Button shape="circle" onPress={rightAnimate} title="R" disabled={lastClicked === 'right'} />
 			</View>
 		</View>
 	);
