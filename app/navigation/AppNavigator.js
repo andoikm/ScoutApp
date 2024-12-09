@@ -50,7 +50,11 @@ const AppNavigator = () => {
   ];
 
   return (
-    <Stack.Navigator id="root-nav" initialRouteName="Home" screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      id="root-nav"
+      initialRouteName="Home"
+      screenOptions={{ headerShown: false }}
+    >
       {routes.map((route) => (
         <Stack.Screen
           key={route.name}

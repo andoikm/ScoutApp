@@ -3,6 +3,8 @@ import Layout from '../components/Layout';
 import Button from '../components/Button';
 import Heading from '../components/Heading';
 import MatchCard from '../components/MatchCard';
+import ConfirmButton from "../components/ConfirmButton";
+import {useGlobalState} from "../context/AppProvider";
 
 const title = "Dear John Your Upcoming Match";
 const description = "Please ensure that all conditions are met before starting the stream.";
@@ -37,18 +39,26 @@ const slots = [
 ]
 
 const UpcomingMatch = ({ navigation }) => {
+  const { globalState, handleLogOut } = useGlobalState();
 
   return (
     <Layout backgrounded>
       <View style={baseStyles.container}>
         <View style={baseStyles.row}>
           <View style={baseStyles.buttonRow}>
-            <Button
-              title="LOG OUT"
-              theme="primaryFilled"
-              textStyles={baseStyles.logoutButton}
-              styles={baseStyles.logoutButtonContainer}
-            />
+            <ConfirmButton
+              onConfirm={handleLogOut}
+              title="Logout"
+              successButtonProps={{title: "LOG OUT"}}
+              content="Are you sure you want to logout?"
+            >
+              <Button
+                title="LOG OUT"
+                theme="primaryFilled"
+                textStyles={baseStyles.logoutButton}
+                styles={baseStyles.logoutButtonContainer}
+              />
+            </ConfirmButton>
           </View>
           <View style={baseStyles.textRow}>
             <Heading size="medium" bold viewStyles={baseStyles.heading}>{title}</Heading>

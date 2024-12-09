@@ -4,6 +4,7 @@ import { Colors } from '../styles';
 import CompetitorsCard from './CompetitorsCard';
 import KeyValueSlot from './KeyValueSlot';
 import PostponeModal from './PostponeModal';
+import CancelMatchModal from "./CancelMatchModal";
 
 const MatchCard = ({ homeCompetitor, awayCompetitor, slots, navigation }) => {
   return (
@@ -19,7 +20,13 @@ const MatchCard = ({ homeCompetitor, awayCompetitor, slots, navigation }) => {
       </View>
       <View style={baseStyles.footer}>
         <View style={baseStyles.footerCol}>
-          <Button size="small" flex={0.5} theme="filled" title="CANCEL MATCH" onPress={() => navigation.navigate('Home')} />
+            <CancelMatchModal btnProps={{
+              icon: null,
+              size: "small",
+              flex: 0.5,
+              theme: "filled",
+              title: "CANCEL MATCH",
+            }} />
         </View>
         <View style={baseStyles.footerCol}>
           <PostponeModal />

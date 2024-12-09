@@ -14,7 +14,7 @@ const options = [
 	{ id: 4, label: 'Other', label2: 'Այլ պատճառ'},
 ];
 
-const CancelMatchModal = ({btnStyles}) => {
+const CancelMatchModal = ({btnStyles, btnProps}) => {
 	const [open, setOpen] = useState(false);
 	const [reasonCode, setReasonCode] = useState(1);
 
@@ -26,6 +26,7 @@ const CancelMatchModal = ({btnStyles}) => {
 				title="CANCEL MATCH"
 				theme="dangerOutline"
 				onPress={() => setOpen(true)}
+				{...btnProps}
 			/>
 			<CustomModal
 				title='Cancel Match'
