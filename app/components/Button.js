@@ -22,6 +22,7 @@ const Button = ({
   flex,
   icon,
   disabled,
+  vertical = false,
   theme = "default",
   size = "medium",
   shape = "round",
@@ -34,8 +35,10 @@ const Button = ({
     baseStyles[theme],
     baseStyles[size],
     baseStyles[shape],
+    vertical && baseStyles.vertical,
     disabled && baseStyles.disabled,
     flex && { flex },
+
     styles
   ];
 
@@ -66,6 +69,19 @@ const baseStyles = StyleSheet.create({
     justifyContent: 'center',
     color: Colors.primaryTextColor,
     backgroundColor: Colors.lightBackgroundColor,
+  },
+  vertical: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 10,
+    height: 'auto',
+    borderWidth: 0,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 6,
   },
   text: {
     ...defaultFont,
@@ -175,7 +191,8 @@ const baseStyles = StyleSheet.create({
   },
   largeText: {
     fontSize: ButtonSizes.largeFontSize
-  }
+  },
+
 });
 
 export default Button;

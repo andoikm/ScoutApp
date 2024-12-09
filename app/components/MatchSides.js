@@ -1,5 +1,6 @@
 import {View, StyleSheet} from "react-native";
 import CompetitorPointer from "./CompetitorPointer";
+import Button from "./Button";
 
 const MatchSides = ({ children }) => (
 	<View style={baseStyles.view}>
@@ -7,7 +8,7 @@ const MatchSides = ({ children }) => (
 			<CompetitorPointer theme="danger" />
 		</View>
 		<View style={[baseStyles.col, baseStyles.middleCol]}>
-			middle
+			<Button icon="-" title="UNDO" vertical />
 		</View>
 		<View style={[baseStyles.col, baseStyles.competitorCol]}>
 			<CompetitorPointer theme="info" reversed />
