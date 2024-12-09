@@ -3,7 +3,17 @@ import {View, StyleSheet, Text} from "react-native";
 import CustomModal from "./CustomModal";
 import {Colors} from "../styles";
 
-const ConfirmButton = ({children, title, content, modalWidth = 300, onConfirm, contentCentred, contentBold}) => {
+const ConfirmButton = ({
+	children,
+	title,
+	content,
+	modalWidth = 300,
+	onConfirm,
+	contentCentred,
+	contentBold,
+  cancelButtonProps,
+  successButtonProps={title: 'CONFIRM'}
+}) => {
 	const [open, setOpen] = useState(false);
 
 	const onSuccess = () => {
@@ -21,7 +31,8 @@ const ConfirmButton = ({children, title, content, modalWidth = 300, onConfirm, c
 				onOpenChange={setOpen}
 				onRightSuccess={onSuccess}
 				onRightCancel={() => setOpen(false)}
-				rightSuccessButtonProps={{title: 'CONFIRM'}}
+				rightCancelButtonProps={cancelButtonProps}
+				rightSuccessButtonProps={successButtonProps}
 			>
 				<View style={[
 					baseStyles.view,

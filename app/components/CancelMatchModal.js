@@ -32,7 +32,7 @@ const CancelMatchModal = ({btnStyles}) => {
 				open={open}
 				width={500}
 				onOpenChange={setOpen}
-				onRightSuccess={() => setOpen(false)}
+				onRightSuccess={() => alert('success')}
 				onRightCancel={() => setOpen(false)}
 				rightSuccessButtonProps={{ title: 'CONFIRM' }}
 			>

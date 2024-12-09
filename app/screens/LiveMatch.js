@@ -39,6 +39,8 @@ const LiveMatch = () => {
 						contentCentred
 						content="Are you sure you want to close the betting markets?"
 						onConfirm={() => alert("confirmed")}
+						cancelButtonProps={{title: "NO"}}
+						successButtonProps={{title: "YES", theme: "danger"}}
 					>
 						<Button icon="pause" title="BET STOP" styles={styles.footerButton} />
 					</ConfirmButton>
