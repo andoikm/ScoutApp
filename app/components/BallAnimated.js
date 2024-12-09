@@ -17,8 +17,8 @@ const BallAnimated = () => {
 		>
 			<Animated.View style={[baseStyles.ball, { transform: [{ translateX }, { translateY }] }]} />
 			<View style={baseStyles.controls}>
-				<Button shape="circle" onPress={leftAnimate} title="L" disabled={lastClicked === 'left'} />
-				<Button shape="circle" onPress={rightAnimate} title="R" disabled={lastClicked === 'right'} />
+				<Button theme="primaryOutline" shape="circle" onPress={leftAnimate} icon="chevron-left" disabled={lastClicked === 'left'} />
+				<Button theme="primaryOutline" shape="circle" onPress={rightAnimate} icon="chevron-right" disabled={lastClicked === 'right'} />
 			</View>
 		</View>
 	);
@@ -29,7 +29,7 @@ export default BallAnimated;
 const baseStyles = StyleSheet.create({
 	viewBall: {
 		height: "50%",
-		marginTop: -50,
+		marginTop: -70,
 		width: "50%",
 		justifyContent: "flex-start",
 		alignItems: "center",

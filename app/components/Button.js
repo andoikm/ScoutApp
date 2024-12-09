@@ -1,6 +1,7 @@
 import React from 'react';
 import { ButtonSizes, Colors, defaultFont } from '../styles';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity } from 'react-native';
+import Icons from "./Icons";
 
 export const shapes = { circle: 'circle', round: 'round' };
 export const themes = {
@@ -42,7 +43,7 @@ const Button = ({
     styles
   ];
 
-  const getTextStyle = () => [
+  const textStyle = [
     baseStyles.text,
     baseStyles[`${theme}Text`],
     baseStyles[`${size}Text`],
@@ -50,10 +51,15 @@ const Button = ({
     textStyles
   ];
 
+  const iconStyle = [
+    baseStyles.icon,
+    baseStyles[`${theme}Text`],
+  ]
+
   return (
     <TouchableOpacity style={getButtonStyle()} onPress={onPress} disabled={disabled}>
-      {icon && <View style={baseStyles.iconContainer}>{icon}</View>}
-      <Text style={getTextStyle()}>{title}{children}</Text>
+      {icon && <Icons icon={icon} style={iconStyle} />}
+      {(title || children) && <Text style={textStyle}>{title}{children}</Text>}
     </TouchableOpacity>
   );
 };
@@ -92,13 +98,13 @@ const baseStyles = StyleSheet.create({
     alignItems: 'center',
     height: 22
   },
-  iconContainer: {
+  icon: {
     height: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     color: Colors.primaryTextColor,
-    fontSize: ButtonSizes.mediumFontSize,
+    fontSize: ButtonSizes.mediumFontSize + 5 ,
   },
   disabled: {
     opacity: 0.5,
@@ -170,6 +176,7 @@ const baseStyles = StyleSheet.create({
     borderRadius: '50%',
     height: 40,
     width: 40,
+    borderWidth: 0,
   },
   small: {
     height: ButtonSizes.smallHeight,

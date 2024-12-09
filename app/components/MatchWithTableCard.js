@@ -1,7 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import { Animated, ImageBackground, StyleSheet, View } from 'react-native';
 import Button from './Button';
-import { Colors } from "../styles";
 import useAnimatedSwiper from "../hooks/useAnimatedSwiper";
 import AvatarWithName from "./AvatarWithName";
 import TableCover from "./TableCover";
@@ -55,10 +54,10 @@ const MatchWithTableCard = () => {
             rightTranslate={swiperTable.rightTranslate}
           />
           <View style={baseStyle.reverseContainer}>
-            <BallAnimated />
             <View style={baseStyle.reverseButtonContainer}>
-              <Button shape="circle" title="T" onPress={toggleSwipe} />
+              <Button theme="primaryOutline" icon="exchange-alt" shape="circle" onPress={toggleSwipe} />
             </View>
+            <BallAnimated />
           </View>
         </View>
         <Animated.View style={[baseStyle.col, baseStyle.avatarCol, { transform: [{ translateX: swiper.rightTranslate }] }]}>
@@ -103,5 +102,6 @@ const baseStyle = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     top: '20%',
+    zIndex: 2
   },
 });

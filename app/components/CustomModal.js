@@ -39,7 +39,7 @@ const CustomModal = ({
           <View style={{ ...styles.modalView, width }}>
             {title && (
               <View style={styles.modalHeader}>
-                <Heading size="medium">{title}</Heading>
+                <Heading size="medium" bold>{title}</Heading>
               </View>
             )}
             <ScrollView

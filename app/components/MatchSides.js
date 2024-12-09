@@ -1,14 +1,14 @@
 import {View, StyleSheet} from "react-native";
+import UndoStep from "./UndoStep";
 import CompetitorPointer from "./CompetitorPointer";
-import Button from "./Button";
 
-const MatchSides = ({ children }) => (
+const MatchSides = () => (
 	<View style={baseStyles.view}>
 		<View style={[baseStyles.col, baseStyles.competitorCol]}>
 			<CompetitorPointer theme="danger" />
 		</View>
 		<View style={[baseStyles.col, baseStyles.middleCol]}>
-			<Button icon="-" title="UNDO" vertical />
+			<UndoStep />
 		</View>
 		<View style={[baseStyles.col, baseStyles.competitorCol]}>
 			<CompetitorPointer theme="info" reversed />

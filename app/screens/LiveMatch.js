@@ -29,15 +29,16 @@ const LiveMatch = () => {
 				</View>
 
 				<View style={styles.footer}>
-					<Button title="TIME OUT" styles={styles.footerButton} onPress={() => {}} />
-					<Button title="VIEW STREAM" styles={styles.footerButton} onPress={() => {}} />
+					<Button icon="timer-outline" title="TIME OUT" styles={styles.footerButton} onPress={() => {}} />
+					<Button icon="play" title="VIEW STREAM" styles={styles.footerButton} onPress={() => {}} />
 					<Button
+						icon="close"
 						title="CANCEL MATCH"
 						styles={styles.footerButton}
 						onPress={() => {}}
 						theme="dangerOutline"
 					/>
-					<Button title="BET STOP" styles={styles.footerButton} onPress={() => {}} />
+					<Button icon="pause" title="BET STOP" styles={styles.footerButton} onPress={() => {}} />
 				</View>
 			</View>
 		</Layout>
