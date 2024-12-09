@@ -6,6 +6,8 @@ import ScoreTag from "../components/ScoreTag";
 import MatchSides from "../components/MatchSides";
 import Button from "../components/Button";
 import ScoreTable from "../components/ScoreTable";
+import CancelMatchModal from "../components/CancelMatchModal";
+import ConfirmButton from "../components/ConfirmButton";
 
 const LiveMatch = () => {
 	return (
@@ -31,14 +33,15 @@ const LiveMatch = () => {
 				<View style={styles.footer}>
 					<Button icon="timer-outline" title="TIME OUT" styles={styles.footerButton} onPress={() => {}} />
 					<Button icon="play" title="VIEW STREAM" styles={styles.footerButton} onPress={() => {}} />
-					<Button
-						icon="close"
-						title="CANCEL MATCH"
-						styles={styles.footerButton}
-						onPress={() => {}}
-						theme="dangerOutline"
-					/>
-					<Button icon="pause" title="BET STOP" styles={styles.footerButton} onPress={() => {}} />
+					<CancelMatchModal btnStyles={styles.footerButton} />
+					<ConfirmButton
+						contentBold
+						contentCentred
+						content="Are you sure you want to close the betting markets?"
+						onConfirm={() => alert("confirmed")}
+					>
+						<Button icon="pause" title="BET STOP" styles={styles.footerButton} />
+					</ConfirmButton>
 				</View>
 			</View>
 		</Layout>
