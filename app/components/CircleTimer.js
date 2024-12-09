@@ -62,7 +62,7 @@ const CircleTimer = ({ durationMs = 60000 }) => {
 			<Svg height="200" width="200" style={styles.circle}>
 				<Circle
 					cx='100'
-					cy="100"
+					cy='100'
 					r={radius}
 					stroke={timeLeftMs < durationMs/2 && timeLeftMs > 0? Colors.errorColor : Colors.infoColor}
 					strokeWidth={strokeWidth}
