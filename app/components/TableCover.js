@@ -2,7 +2,6 @@ import {Animated, View, StyleSheet} from "react-native";
 import React from "react";
 import {Colors} from "../styles";
 
-
 const TableCover = ({ swiped, setWidth, leftTranslate, rightTranslate }) => {
 	return (
 		<View style={baseStyle.tableColorsBg} onLayout={e => setWidth(e.nativeEvent.layout.width / 2 - 2.5)}>

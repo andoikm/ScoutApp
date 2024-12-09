@@ -8,11 +8,13 @@ import TextArea from '../components/TextArea';
 import Segmented from '../components/Segmented';
 import EmailInput from '../components/EmailInput';
 import FlexRow from '../components/FlexRow';
+import CircleTimer from "../components/CircleTimer";
 
 const Components = ({ navigation }) => {
 
   return (
     <Layout>
+      <CircleTimer />
       <View style={{width: '100%', display: 'flex', gap: 5,}}>
         <FlexRow>
           <Heading size="large" bold>Headings large</Heading>
