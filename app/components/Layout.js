@@ -26,8 +26,8 @@ const baseStyles = StyleSheet.create({
     flex: 1,
     padding: 20,
     zIndex: 1,
-    maxWidth: 1024,
-    maxHeight: 750,
+    maxWidth: 1300,
+    maxHeight: 740,
     width: '100%',
   },
   bottomHalf: {

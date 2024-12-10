@@ -11,7 +11,6 @@ const MatchSides = () => (
 		<View style={[baseStyles.col, baseStyles.middleCol]}>
 			<Heading theme="secondary">3TH SET</Heading>
 			<UndoStep />
-
 		</View>
 		<View style={[baseStyles.col, baseStyles.competitorCol]}>
 			<CompetitorPointer theme="info" reversed />
@@ -28,7 +27,6 @@ const baseStyles = StyleSheet.create({
 		alignItems: "center",
 		gap: 20,
 		justifyContent: "center",
-		maxHeight: 250,
 	},
 	competitorCol: {
 		flex: 1,

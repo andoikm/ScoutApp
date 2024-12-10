@@ -19,16 +19,14 @@ const CompetitorPointer = ({ theme, reversed }) => {
 					<Button
 						theme="danger"
 						size="large"
+						icon="plus"
 						styles={[themeStyles, baseStyles.button]}
-						textStyles={baseStyles.buttonText}
-					>
-						+
-					</Button>
+						iconStyles={baseStyles.buttonText}
+					/>
 				</View>
-
-				<View style={[baseStyles.padding, baseStyles.timeOut, baseStyles.topBordered[theme]]}>
-					<TouchableOpacity>
-						<Text style={colorStyles}>Time out</Text>
+				<View style={[baseStyles.timeOut, baseStyles.topBordered[theme]]}>
+					<TouchableOpacity style={baseStyles.timeOutBtn}>
+						<Text style={[colorStyles, baseStyles.timeOutText]}>Time out</Text>
 					</TouchableOpacity>
 				</View>
 			</View>
@@ -52,7 +50,7 @@ const baseStyles = StyleSheet.create({
 		},
 	},
 	padding: {
-		padding: 16,
+		padding: 20,
 	},
 	topBordered: {
 		danger: {
@@ -70,6 +68,7 @@ const baseStyles = StyleSheet.create({
 		borderRadius: 16,
 		overflow: "hidden",
 		flex: 1,
+		minHeight: 250,
 		width: "100%",
 	},
 	reversed: {
@@ -80,6 +79,7 @@ const baseStyles = StyleSheet.create({
 		borderRadius: 16,
 		overflow: "hidden",
 		flex: 1,
+		gap: 20
 	},
 	danger: {
 		backgroundColor: Colors.dangerColor,
@@ -90,24 +90,32 @@ const baseStyles = StyleSheet.create({
 		backgroundColor: Colors.infoColor,
 	},
 	header: {
-		gap: 16,
+		gap: 25,
 	},
 	pointView: {
 		alignItems: "center",
 		justifyContent: "center",
-		padding: 16,
+		padding: 20,
 	},
 	timeOut: {
-		justifyContent: "center",
+		display: "flex",
+		flex: 1,
+	},
+	timeOutBtn: {
+		flex: 1,
 		alignItems: "center",
+		justifyContent: "center",
+	},
+	timeOutText: {
+		fontSize: 14,
+		fontFamily: "Roboto",
 	},
 	button: {
 		minWidth: 150,
-		padding: 30,
+		height: 50
 	},
 	buttonText: {
-		fontWeight: "800",
-		fontSize: 30,
+		fontSize: 20,
 	},
 	lightTextColor: {
 		color: Colors.lightTextColor,

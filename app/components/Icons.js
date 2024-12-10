@@ -17,7 +17,7 @@ const Icons = ({ icon, size, color = Colors.primaryTextColor, ...rest }) => {
 		IconComponent = Feather;
 	}
 
-	if (['exchange-alt'].indexOf(icon) > -1){
+	if (['exchange-alt', 'plus'].indexOf(icon) > -1){
 		IconComponent = FontAwesome5;
 	}
 

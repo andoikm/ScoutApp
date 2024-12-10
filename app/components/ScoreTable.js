@@ -22,7 +22,7 @@ const ScoreCell = ({ content, style }) => (
 const ScoreTable = () => {
 	return (
 		<View style={styles.container}>
-			<View style={styles.column}>
+			<View style={[styles.column, styles.playerCellCol]}>
 				<View style={styles.row} />
 				<PlayerCell name="Babken Harutyunyan" style={styles.topLeft} />
 				<PlayerCell name="Sahak Karapetyn" style={styles.bottomLeft} />
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
 	container: {
 		flexDirection: "row",
 		gap: 1,
+		width: '100%'
 	},
 	column: {
 		flexDirection: "column",
@@ -57,13 +58,16 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	row: {
-		height: 40,
-		width: 90,
+		height: 50,
+		width: 120,
 		justifyContent: "center",
 		alignItems: "center",
 	},
+	playerCellCol: {
+		flex: 1
+	},
 	playerCell: {
-		width: 300,
+		width: "100%",
 		paddingLeft: 20,
 		alignItems: "flex-start",
 	},

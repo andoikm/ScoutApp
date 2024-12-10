@@ -29,6 +29,7 @@ const Button = ({
   shape = "round",
   styles = {},
   textStyles = {},
+  iconStyles = {},
   children
 }) => {
   const getButtonStyle = () => [
@@ -39,7 +40,6 @@ const Button = ({
     vertical && baseStyles.vertical,
     disabled && baseStyles.disabled,
     flex && { flex },
-
     styles
   ];
 
@@ -54,6 +54,7 @@ const Button = ({
   const iconStyle = [
     baseStyles.icon,
     baseStyles[`${theme}Text`],
+    iconStyles
   ]
 
   return (

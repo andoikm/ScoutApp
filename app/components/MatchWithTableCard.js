@@ -87,10 +87,10 @@ const baseStyle = StyleSheet.create({
     height: '100%',
   },
   avatarCol: {
-    padding: 40,
+    padding: 5,
     alignItems: 'center',
     justifyContent: 'center',
-    width: 200,
+    width: 250,
   },
   reverseContainer: {
     alignItems: 'center',

@@ -7,7 +7,7 @@ const ConfirmButton = ({
 	children,
 	title,
 	content,
-	modalWidth = 300,
+	modalWidth = 400,
 	onConfirm,
 	contentCentred,
 	contentBold,
