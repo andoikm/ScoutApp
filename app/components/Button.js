@@ -77,17 +77,17 @@ const baseStyles = StyleSheet.create({
     backgroundColor: Colors.lightBackgroundColor,
   },
   vertical: {
+    display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
     padding: 10,
-    height: 'auto',
+    gap: 2,
     borderWidth: 0,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.3,
     shadowRadius: 5,
     elevation: 6,
+    height: "auto",
   },
   text: {
     ...defaultFont,
@@ -99,12 +99,11 @@ const baseStyles = StyleSheet.create({
     height: 22
   },
   icon: {
-    height: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     color: Colors.primaryTextColor,
-    fontSize: ButtonSizes.mediumFontSize + 5 ,
+    fontSize: ButtonSizes.mediumFontSize + 3,
   },
   disabled: {
     opacity: 0.5,
