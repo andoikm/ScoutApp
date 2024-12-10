@@ -52,3 +52,4 @@ export const defaultFont = {
   fontFamily: 'Roboto'
 };
 
+export default Colors;
