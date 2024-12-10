@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Layout from '../components/Layout';
 import Button from '../components/Button';
 import Heading from '../components/Heading';

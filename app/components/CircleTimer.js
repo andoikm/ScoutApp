@@ -1,21 +1,18 @@
-import React, { useRef, useCallback, useState } from "react";
+import React, {useRef, useCallback, useState, useEffect} from "react";
 import { View, StyleSheet, Animated, Easing, Text } from "react-native";
 import Svg, { Circle } from "react-native-svg";
 import { Colors } from "../styles";
-import Button from "./Button";
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
-const CircleTimer = ({ durationMs = 60000 }) => {
+const CircleTimer = ({ durationMs = 60000, size = 200 }) => {
 	const animation = useRef(new Animated.Value(0)).current;
-	const radius = 90;
 	const strokeWidth = 5;
+	const radius = size / 2 - strokeWidth;
 	const circumference = 2 * Math.PI * radius;
 
-	// State for showing the remaining time in milliseconds
 	const [timeLeftMs, setTimeLeftMs] = useState(durationMs);
 
-	// Helper function to format milliseconds in MM:SS
 	function formatTime(ms) {
 		const totalSeconds = Math.floor(ms / 1000);
 		const minutes = Math.floor(totalSeconds / 60);
@@ -40,6 +37,11 @@ const CircleTimer = ({ durationMs = 60000 }) => {
 			}
 		}, 100);
 
+		useEffect(() => {
+			start();
+			debugger;
+		}, []);
+
 		Animated.timing(animation, {
 			toValue: 1,
 			duration: durationMs,
@@ -58,19 +60,19 @@ const CircleTimer = ({ durationMs = 60000 }) => {
 	});
 
 	return (
-		<View style={styles.container}>
-			<Svg height="200" width="200" style={styles.circle}>
+		<View style={[styles.container, { width: size, height: size, borderRadius: size / 2 }]}>
+			<Svg height={size} width={size} style={styles.circle}>
 				<Circle
-					cx="100"
-					cy='100'
+					cx={size / 2}
+					cy={size / 2}
 					r={radius}
-					stroke={timeLeftMs < durationMs/2 && timeLeftMs > 0? Colors.errorColor : Colors.infoColor}
+					stroke={timeLeftMs < durationMs / 2 && timeLeftMs > 0 ? Colors.errorColor : Colors.infoColor}
 					strokeWidth={strokeWidth}
 					fill="none"
 				/>
 				<AnimatedCircle
-					cx="100"
-					cy="100"
+					cx={size / 2}
+					cy={size / 2}
 					r={radius}
 					stroke={Colors.secondaryBackgroundColor}
 					strokeWidth={strokeWidth}
@@ -78,11 +80,10 @@ const CircleTimer = ({ durationMs = 60000 }) => {
 					strokeDasharray={circumference}
 					strokeDashoffset={strokeDashoffset}
 					strokeLinecap="round"
-					transform={`rotate(-90, 100, 100)`}
+					transform={`rotate(-90, ${size / 2}, ${size / 2})`}
 				/>
 			</Svg>
 			<Text style={styles.timerText}>{formatTime(timeLeftMs)}</Text>
-			<Button icon="play" onPress={start} title="Start" />
 		</View>
 	);
 };
@@ -91,7 +92,6 @@ export default CircleTimer;
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
 		alignItems: "center",
 		position: "relative",
 		backgroundColor: "#fff",

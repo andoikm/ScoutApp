@@ -13,6 +13,7 @@ const CustomModal = ({
   width = 616,
   title,
   open,
+  backgrounded,
   footerBackgrounded,
   onOpenChange,
   onLeftCancel,
@@ -37,6 +38,7 @@ const CustomModal = ({
       >
         <View style={styles.modalContainer}>
           <View style={{ ...styles.modalView, width }}>
+            {backgrounded && <View style={styles.bottomHalf} />}
             {title && (
               <View style={styles.modalHeader}>
                 <Heading size="medium" bold>{title}</Heading>
@@ -117,12 +119,23 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    position: "relative",
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
+  },
+  bottomHalf: {
+    position: 'absolute',
+    backgroundColor: Colors.secondaryBackgroundColor,
+    left: 0,
+    top: 150,
+    height: '100%',
+    width: '100%',
+    zIndex: -1,
   },
   modalView: {
     margin: 20,
     backgroundColor: 'white',
     borderRadius: 20,
+    overflow: 'hidden',
     paddingTop: 24,
     alignItems: 'center',
     shadowColor: '#000',

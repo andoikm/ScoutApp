@@ -3,7 +3,7 @@ import { Colors } from "../styles";
 import Heading from "./Heading";
 import Button from "./Button";
 
-const CompetitorPointer = ({ theme, reversed }) => {
+const CompetitorPointer = ({ theme, reversed, onClickTimeOut }) => {
 	const isReversed = reversed ? baseStyles.reversed : null;
 	const themeStyles = baseStyles[theme];
 	const colorStyles = baseStyles.colors[theme];
@@ -25,7 +25,7 @@ const CompetitorPointer = ({ theme, reversed }) => {
 					/>
 				</View>
 				<View style={[baseStyles.timeOut, baseStyles.topBordered[theme]]}>
-					<TouchableOpacity style={baseStyles.timeOutBtn}>
+					<TouchableOpacity style={baseStyles.timeOutBtn} onPress={onClickTimeOut}>
 						<Text style={[colorStyles, baseStyles.timeOutText]}>Time out</Text>
 					</TouchableOpacity>
 				</View>
